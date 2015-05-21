@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: owners
+#
+#  id             :integer          not null, primary key
+#  first_name     :string
+#  last_name      :string
+#  phone          :string
+#  street_address :string
+#  city           :string
+#  state          :string
+#  zip            :string
+#  signed_waiver  :boolean
+#  emerg_contact  :string
+#  emerg_phone    :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 require 'test_helper'
 
 class OwnerTest < ActiveSupport::TestCase
