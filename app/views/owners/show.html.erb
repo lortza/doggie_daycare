@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Owner Profile</h1>
+<p>&nbsp;</p>
 <p>
-  <strong>First name:</strong>
-  <%= @owner.first_name %>
+  <strong>Name:</strong>
+  <%= @owner.first_last %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @owner.last_name %>
-</p>
+  <strong>Dogs:</strong>
+  <ul>
+    <% @owner.dogs.order("name").each do |x| %>
+    <li> <%= x.name %> </li>
+    <% end %>
+  </ul>
+  </p>
+
 
 <p>
   <strong>Phone:</strong>
@@ -16,23 +22,8 @@
 </p>
 
 <p>
-  <strong>Street address:</strong>
-  <%= @owner.street_address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @owner.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @owner.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @owner.zip %>
+  <strong>Address:</strong>
+  <%= @owner.address_block %>
 </p>
 
 <p>

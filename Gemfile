@@ -46,6 +46,7 @@ gem "annotate"
 
 gem "stamp"
 
+gem "paperclip", "~> 4.2"
 
 group :development do
   gem "quiet_assets" # quiet those assets down
