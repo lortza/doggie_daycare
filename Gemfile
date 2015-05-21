@@ -44,6 +44,8 @@ gem "awesome_print"
 # annotate models with or schema
 gem "annotate"
 
+gem "stamp"
+
 
 group :development do
   gem "quiet_assets" # quiet those assets down
