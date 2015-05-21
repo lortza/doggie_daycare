@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<h1>Dog Profile</h1>
+<p>&nbsp;</p>
+<p>
+ <%= image_tag @dog.avatar.url(:medium) %>
+</p>
 
 <p>
   <strong>Name:</strong>
@@ -6,29 +11,23 @@
 </p>
 
 <p>
- <%= image_tag @dog.avatar.url %>
- <%= image_tag @dog.avatar.url(:medium) %>
- <%= image_tag @dog.avatar.url(:thumb) %>
-</p>
-
-<p>
   <strong>Breed:</strong>
-  <%= @dog.breed %>
+  <%= @dog.breed.name %>
 </p>
 
 <p>
-  <strong>Birth date:</strong>
+  <strong>Birthday:</strong>
   <%= @dog.birth_date %>
 </p>
 
 <p>
   <strong>Owner:</strong>
-  <%= @dog.owner %>
+  <%= @dog.owner.first_last %>
 </p>
 
 <p>
   <strong>Vet:</strong>
-  <%= @dog.vet %>
+  <%= @dog.vet.name %>
 </p>
 
 <p>
