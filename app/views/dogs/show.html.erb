@@ -6,6 +6,12 @@
 </p>
 
 <p>
+ <%= image_tag @dog.avatar.url %>
+ <%= image_tag @dog.avatar.url(:medium) %>
+ <%= image_tag @dog.avatar.url(:thumb) %>
+</p>
+
+<p>
   <strong>Breed:</strong>
   <%= @dog.breed %>
 </p>

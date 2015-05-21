@@ -22,6 +22,6 @@ class Owner < ActiveRecord::Base
   belongs_to :state
 
   def last_first
-    "#{last_first}, #{first_name}"
+    "#{last_name}, #{first_name}"
   end
 end
