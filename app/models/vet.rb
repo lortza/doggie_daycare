@@ -1,3 +1,8 @@
+class Vet < ActiveRecord::Base
+  has_many :dogs
+end
+
+
 # == Schema Information
 #
 # Table name: vets
@@ -8,7 +13,3 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
-class Vet < ActiveRecord::Base
-  has_many :dogs
-end

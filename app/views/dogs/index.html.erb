@@ -11,7 +11,9 @@
       <th>Owner</th>
       <th>Vet</th>
       <th>In Daycare</th>
-      <th colspan="3"></th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -24,9 +26,9 @@
         <td><%= dog.owner.first_last %></td>
         <td><%= dog.vet.name %></td>
         <td><%= dog.in_daycare %></td>
-        <td><%= link_to 'Show', dog, class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog), class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to ' ', dog, class: "fa fa-binoculars" %></td>
+        <td><%= link_to ' ', edit_dog_path(dog), class: "fa fa-pencil" %></td>
+        <td><%= link_to ' ', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %></td>
       </tr>
     <% end %>
   </tbody>
