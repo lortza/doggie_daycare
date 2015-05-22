@@ -36,4 +36,12 @@ footer {
  .fa-social {
   margin: 0 2% 5% 2%;
 }
+
+.name {
+  font-style: italic; 
+  color: gray; 
+  text-align: right;
+  font-size: 90%;
+  font-family: cursive;
+}
  
