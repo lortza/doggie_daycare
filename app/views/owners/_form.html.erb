@@ -13,28 +13,28 @@
 
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control", placeholder: "Jane" %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Smith" %>
   </div>
   <div class="field">
     <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, class: "form-control", placeholder: "555-867-5309" %>
   </div>
   <div class="field">
     <%= f.label :street_address %><br>
-    <%= f.text_field :street_address %>
+    <%= f.text_field :street_address, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, class: "form-control" %>
   </div>
   
   <div class="field">
     <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
+    <%= f.text_field :zip, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :signed_waiver %><br>
@@ -42,11 +42,11 @@
   </div>
   <div class="field">
     <%= f.label :emerg_contact %><br>
-    <%= f.text_field :emerg_contact %>
+    <%= f.text_field :emerg_contact, class: "form-control", placeholder: "John Smith" %>
   </div>
   <div class="field">
     <%= f.label :emerg_phone %><br>
-    <%= f.text_field :emerg_phone %>
+    <%= f.text_field :emerg_phone, class: "form-control", placeholder: "555-867-5309" %>
   </div>
   <div class="actions">
     <%= f.submit %>

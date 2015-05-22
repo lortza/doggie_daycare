@@ -8,10 +8,9 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Phone</th>
-      <th>Street address</th>
+      <th>Address</th>
       <th>City</th>
-<!--       <th>State</th>
- -->      <th>Zip</th>
+      <th>Zip</th>
       <th>Signed waiver</th>
       <th>Emerg contact</th>
       <th>Emerg phone</th>
@@ -27,14 +26,13 @@
         <td><%= owner.phone %></td>
         <td><%= owner.street_address %></td>
         <td><%= owner.city %></td>
-        <td><%= owner.state %></td>
         <td><%= owner.zip %></td>
         <td><%= owner.signed_waiver %></td>
         <td><%= owner.emerg_contact %></td>
         <td><%= owner.emerg_phone %></td>
-        <td><%= link_to 'Show', owner %></td>
-        <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
-        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', owner, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_owner_path(owner), class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Owner', new_owner_path %>
+<%= link_to 'New Owner', new_owner_path, class: "btn btn-success btn-xs" %>

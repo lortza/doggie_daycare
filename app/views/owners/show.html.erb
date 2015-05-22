@@ -41,5 +41,5 @@
   <%= @owner.emerg_phone %>
 </p>
 
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>
+<%= link_to 'Edit Owner', edit_owner_path(@owner), class: "btn btn-default btn-xs" %> 
+<%= link_to 'Back to All Owners', owners_path, class: "btn btn-default btn-xs" %>  <%= link_to 'Create New Dog', new_dog_path, class: "btn btn-success btn-xs" %>

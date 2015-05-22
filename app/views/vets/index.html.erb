@@ -16,9 +16,9 @@
       <tr>
         <td><%= vet.name %></td>
         <td><%= vet.phone %></td>
-        <td><%= link_to 'Show', vet %></td>
-        <td><%= link_to 'Edit', edit_vet_path(vet) %></td>
-        <td><%= link_to 'Destroy', vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vet, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_vet_path(vet), class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Destroy', vet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Vet', new_vet_path %>
+<%= link_to 'New Vet', new_vet_path, class: "btn btn-success btn-xs" %>
