@@ -1,38 +1,46 @@
 <h1>Dogs</h1>
 <p>&nbsp;</p>
 
-<table class = "table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Birthday</th>
-      <th>Owner</th>
-      <th>Vet</th>
-      <th>In Daycare</th>
-      <th>View</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
+  
+<div class="row">
 
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= dog.name %></td>
-        <td><%= dog.breed.name %></td>
-        <td><%= dog.birth_date %></td>
-        <td><%= dog.owner.first_last %></td>
-        <td><%= dog.vet.name %></td>
-        <td><%= dog.in_daycare %></td>
-        <td><%= link_to ' ', dog, class: "fa fa-binoculars" %></td>
-        <td><%= link_to ' ', edit_dog_path(dog), class: "fa fa-pencil" %></td>
-        <td><%= link_to ' ', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @dogs.each do |dog| %>
+<div class="col-md-3">
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= dog.name %> <%= dog.owner.last_name %></h3>
+    </div>
+
+    <div class="panel-body">
+      <%= image_tag dog.avatar.url(:medium), class: "img-responsive" %>
+    </div>
+    <div class="panel-footer">
+    <%= dog.in_daycare %>
+    <%= link_to ' ', dog, class: "fa fa-binoculars" %>
+    <%= link_to ' ', edit_dog_path(dog), class: "fa fa-pencil" %>
+    <%= link_to ' ', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
+    </div><!-- closes panel-footer -->
+  </div><!-- closes panel -->
+
+</div><!-- closes col-md-3 -->
+
+<% end %> <!-- ends loop -->
+</div> <!-- ends row -->
+
+
+
+
+  
+
+
+
+    
+
+
+
+
+ 
 <br>
 
 <%= link_to 'New Dog', new_dog_path, class: "btn btn-success btn-xs" %>
