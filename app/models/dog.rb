@@ -3,6 +3,10 @@ class Dog < ActiveRecord::Base
   belongs_to :owner
   belongs_to :vet
 
+  def name_ownerlast #don't know if this works
+    "#{name} #{owner.last_name}"
+  end
+
   validates :name, :breed_id, :birth_date, :owner_id, :vet_id, presence: true
 
   has_attached_file :avatar, :styles => { 

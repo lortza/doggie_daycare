@@ -16,12 +16,12 @@
 
 <p>
   <strong>Birthday:</strong>
-  <%= @dog.birth_date %>
+  <%= @dog.birth_date.stamp_like("May 1, 2011") %>
 </p>
 
 <p>
   <strong>Owner:</strong>
-  <%= @dog.owner.first_last %>
+  <%= link_to @dog.owner.first_last, owner_path(@dog.owner_id) %>
 </p>
 
 <p>
