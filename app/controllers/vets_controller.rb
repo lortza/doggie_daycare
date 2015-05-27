@@ -6,7 +6,7 @@ class VetsController < ApplicationController
   def index
     #TO DO: fix errors. can't search by last name. search for non existing dog, close error. search for 1/2 existing name and get both error and result.
    if params[:search]
-     @vets = Vet.where("last_name LIKE '%#{params[:search]}%'")
+     @vets = Vet.where("name LIKE '%#{params[:search]}%'")
      if @vets.size.zero?
        flash[:notice] = 'Sorry, there are no matching vets for your search.'
        @vets = Vet.all
