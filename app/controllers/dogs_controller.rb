@@ -4,7 +4,7 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    #TO DO: fix errors. can't search by last name. search for non existing dog, close error. search for 1/2 existing
+    #TO DO: fix errors. can't search by last name. search for non existing dog, close error. search for 1/2 existing name and get both error and result.
    if params[:search]
      @dogs = Dog.where("name LIKE '%#{params[:search]}%'")
      if @dogs.size.zero?
@@ -52,14 +52,14 @@ class DogsController < ApplicationController
   def update
     respond_to do |format|
       if @dog.update(dog_params)
-        format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
+        format.html { redirect_to dogs_path, notice: 'Dog was successfully updated.' }
         format.json { render :show, status: :ok, location: @dog }
       else
         format.html { render :edit }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+      end #if
+    end #do
+  end #update
 
   # DELETE /dogs/1
   # DELETE /dogs/1.json

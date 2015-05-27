@@ -11,7 +11,7 @@
 <% @dogs.order("name").each do |dog| %>
 
 <div class="col-md-3">
-<%#<a href= dogs/<%= dog.id %> 
+<%# this is how we made the whole div a link: <a href= dogs/<%= dog.id %> 
 
  <div class="panel panel-default <%= 'panel-success' if dog.in_daycare %>">
     <div class="panel-heading">
@@ -23,9 +23,17 @@
     <%#<%= image_tag dog.avatar.url(:medium), class: "img-responsive" %>
     </div>
     <div class="panel-footer">
-    <%= link_to ' ', dog, class: "fa fa-binoculars" %>
-    <%= link_to ' ', edit_dog_path(dog), class: "fa fa-pencil" %>
-    <%= link_to ' ', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
+    <!-- Check in/out functionality -->
+         <%= form_for(dog, url: dog_path(dog), :html => {class: "form-inline"}) do |f| %>
+           <% if dog .in_daycare %>
+             <%= f.hidden_field :in_daycare, :value => false %>
+             <%= f.submit "Checked In", class: "btn btn-success btn-xs" %>
+           <% else %>
+             <%= f.hidden_field :in_daycare, :value => true %>
+             <%= f.submit "Checked Out", class: "btn btn-default btn-xs" %>
+           <% end %>  <!-- if -->
+         <% end %> <!-- do -->
+      
     </div><!-- closes panel-footer -->
   </div><!-- closes panel -->
 
