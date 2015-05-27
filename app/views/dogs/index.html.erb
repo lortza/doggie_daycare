@@ -1,9 +1,23 @@
 <h1>Canine Clients</h1>
 
 <div class="row">
-  <div class="col-md-12"> 
+  <div class="col-md-6"> 
     <%= link_to ' Create New Dog', new_dog_path, class: "createbutton btn btn-default btn-xs fa fa-plus" %>
-  </div> <!-- col-md-12 -->
+  </div> <!-- col-md-6 -->
+
+  <!-- Search bar-->
+  <div class="col-md-6">
+  <div class="float-right">       
+      <%= form_tag("/dogs", method: "get", role: "search", class: "navbar-form navbar-left") do %>
+        <div class ="form-group">
+          <%= text_field_tag(:search, nil, placeholder: "Dog's Name", class: "form-control input-sm") %>
+        </div>
+      <%= submit_tag("Search for a Dog", class: "btn btn-default btn-xs") %>
+      <% end %> <!--ends search bar-->
+      <%= link_to 'Show All', dogs_path, class: "btn btn-default btn-xs" %>
+  </div> <!--float-right-->
+  </div> <!-- col-md-6 -->
+  
 </div> <!-- closes row -->
 
 <div class="row">

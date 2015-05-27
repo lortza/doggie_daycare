@@ -78,6 +78,12 @@ footer {
   margin-bottom: 1em;
 }
 
+.float-center {
+  margin-bottom: 1em;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .panel-footer .fa {
   margin: 0px 11%;
 

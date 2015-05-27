@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-6"> 
-    <%= link_to ' Create New Vet', new_vet_path, class: "createbutton btn btn-default btn-xs fa fa-user-md" %>
+    <%= link_to ' Create New Vet', new_vet_path, class: "float-left btn btn-default btn-xs fa fa-user-md" %>
   </div> <!-- col-md-6 -->
   <!-- Search bar-->
   <div class="col-md-6">
@@ -11,8 +11,9 @@
           <div class ="form-group">
             <%= text_field_tag(:search, nil, placeholder: "Vet Name", class: "form-control input-sm") %>
           </div>
-        <%= submit_tag("Search for an Owner", class: "btn btn-default btn-xs") %>
+        <%= submit_tag("Search for a Vet", class: "btn btn-default btn-xs") %>
         <% end %> <!--ends search bar-->
+        <%= link_to 'Show All', vets_path, class: "btn btn-default btn-xs" %>
     </div> <!-- float right-->
   </div> <!-- col-md-6 -->
 
