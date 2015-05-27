@@ -59,5 +59,9 @@
   <%= @owner.emerg_phone %>
 </p>
 
-<%= link_to 'Edit Owner', edit_owner_path(@owner), class: "btn btn-default btn-xs" %> 
-<%= link_to 'Back to All Owners', owners_path, class: "btn btn-default btn-xs" %>  <%= link_to 'Create New Dog', new_dog_path, class: "btn btn-success btn-xs" %>
+
+<%= link_to ' Edit', edit_owner_path(@owner), class: "btn btn-default btn-xs fa fa-pencil" %> 
+<%= link_to ' All Owners', owners_path, class: "btn btn-default btn-xs fa fa-user" %>
+<%= link_to ' New Owner', new_owner_path, class: "btn btn-default btn-xs fa fa-plus" %>
+<%= link_to ' Add Dog', new_dog_path, class: "btn btn-default btn-xs fa fa-plus" %>
+<%= link_to ' Delete Owner', @owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %>

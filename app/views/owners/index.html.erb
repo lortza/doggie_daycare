@@ -1,44 +1,42 @@
 <h1>Dog Owners</h1>
-<p>&nbsp;</p>
+
+<div class="row">
+  <div class="col-md-12"> 
+    <%= link_to ' Create New Owner', new_owner_path, class: "createbutton btn btn-default btn-xs fa fa-user-plus" %>
+  </div> <!-- col-md-12 -->
+</div> <!-- closes row -->
 
 <table class="table">
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
+      <th>Dogs</th>
       <th>Phone</th>
-      <th>Address</th>
       <th>City</th>
-      <th>Zip</th>
-      <th>Signed Waiver</th>
       <th>Emergency Contact</th>
       <th>Em. Phone</th>
-      <th>View</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @owners.each do |owner| %>
-      <tr>
-        <td><%= owner.first_name %></td>
-        <td><%= owner.last_name %></td>
+    <% @owners.order("last_name").each do |owner| %>
+        <td><%= link_to owner.last_first, owner %></td>
+        <td>
+          <ul>
+          <% owner.dogs.order("name").each do |dog| %>
+          <li><%= link_to dog.name, dog %></li>
+          <% end %>
+          </ul>
+        </td>
         <td><%= owner.phone %></td>
-        <td><%= owner.street_address %></td>
         <td><%= owner.city %></td>
-        <td><%= owner.zip %></td>
-        <td><%= owner.signed_waiver %></td>
         <td><%= owner.emerg_contact %></td>
         <td><%= owner.emerg_phone %></td>
-        <td><%= link_to ' ', owner, class: "fa fa-binoculars" %></td>
-        <td><%= link_to ' ', edit_owner_path(owner), class: "fa fa-pencil" %></td>
-        <td><%= link_to ' ', owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %></td>
+        <td><%= link_to ' View', owner, class: "btn btn-default btn-xs fa fa-binoculars" %></td>
+        <td><%= link_to ' Edit', edit_owner_path(owner), class: "btn btn-default btn-xs fa fa-pencil" %></td>
+        <td><%= link_to ' Delete', owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Owner', new_owner_path, class: "btn btn-success btn-xs" %>

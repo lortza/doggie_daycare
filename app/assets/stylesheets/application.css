@@ -44,4 +44,30 @@ footer {
   font-size: 90%;
   font-family: cursive;
 }
- 
+
+
+.panel a {
+  background-color: ;
+}
+ .panel-heading a:hover  {
+  text-decoration: none;
+  color: #666666;
+  background-color: transparent;
+
+ }
+
+.jumbotron {
+  margin-top: -2em;
+  background-image: url("dog-tron3.jpg");
+}
+
+.createbutton {
+  float: right;
+  margin-bottom: 1em;
+}
+
+.panel-footer .fa {
+  margin: 0px 11%;
+
+}
+

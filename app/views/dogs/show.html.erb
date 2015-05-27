@@ -1,38 +1,48 @@
 <h1>Dog Profile</h1>
 <p>&nbsp;</p>
-<p>
- <%= image_tag @dog.avatar.url(:medium), class: "img-responsive" %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+<div class="row">
+<div class="col-md-4">
+  <p>
+   <%= image_tag @dog.avatar.url(:medium), class: "img-responsive" %>
+  </p>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed.name %>
-</p>
+  </div><!--closes col-md-4-->
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @dog.birth_date.stamp_like("May 1, 2011") %>
-</p>
+  <div class="col-md-8">
+    <h2> <%= @dog.name %> </h2>
+    
+    <%= link_to ' Edit', edit_dog_path(@dog), class: "btn btn-default btn-xs fa fa-pencil" %> 
+    <%= link_to ' All Dogs', dogs_path, class: "btn btn-default btn-xs fa fa-paw" %>
+    <%= link_to " Owner", owner_path(@dog.owner_id), class: "btn btn-default btn-xs fa fa-user"  %>
+    <%= link_to ' New Dog', new_dog_path, class: "btn btn-default btn-xs fa fa-plus" %>
+<p>&nbsp;</p>
+  <p>
+    <strong>Breed:</strong>
+    <%= @dog.breed.name %>
+  </p>
 
-<p>
-  <strong>Owner:</strong>
-  <%= link_to @dog.owner.first_last, owner_path(@dog.owner_id) %>
-</p>
+  <p>
+    <strong>Birthday:</strong>
+    <%= @dog.birth_date.stamp_like("May 1, 2011") %>
+  </p>
 
-<p>
-  <strong>Vet:</strong>
-  <%= @dog.vet.name %>
-</p>
+  <p>
+    <strong>Owner:</strong>
+    <%= link_to @dog.owner.first_last, owner_path(@dog.owner_id) %> (<%= @dog.owner.phone %>)
+  </p>
 
-<p>
-  <strong>In daycare:</strong>
-  <%= @dog.in_daycare %>
-</p>
+  <p>
+    <strong>Vet:</strong>
+    <%= link_to @dog.vet.name, vet_path(@dog.vet_id) %> (<%= @dog.vet.phone %>)
+  </p>
 
-<%= link_to 'Edit', edit_dog_path(@dog), class: "btn btn-default btn-xs" %> 
-<%= link_to 'Back to All Dogs', dogs_path, class: "btn btn-default btn-xs" %>  <%= link_to 'Create New Dog', new_dog_path, class: "btn btn-success btn-xs" %>
+  <p>
+    <strong>In daycare:</strong>
+    <%= @dog.in_daycare %>
+  </p>
+
+  </div>
+
+</div><!--closes row-->
+

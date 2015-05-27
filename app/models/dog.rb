@@ -3,7 +3,7 @@ class Dog < ActiveRecord::Base
   belongs_to :owner
   belongs_to :vet
 
-  def name_ownerlast #don't know if this works
+  def name_ownerlast 
     "#{name} #{owner.last_name}"
   end
 
