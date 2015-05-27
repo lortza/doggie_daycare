@@ -1,10 +1,25 @@
 <h1>Dog Owners</h1>
 
 <div class="row">
-  <div class="col-md-12"> 
-    <%= link_to ' Create New Owner', new_owner_path, class: "createbutton btn btn-default btn-xs fa fa-user-plus" %>
-  </div> <!-- col-md-12 -->
+  <div class="col-md-6 float-left"> 
+    <%= link_to ' Create New Owner', new_owner_path, class: "float-left btn btn-default btn-xs fa fa-user-plus" %>
+  </div> <!-- col-md-6 -->
+
+  <!-- Search bar-->
+  <div class="col-md-6">
+  <div class="float-right">       
+      <%= form_tag("/owners", method: "get", role: "search", class: "navbar-form navbar-left") do %>
+        <div class ="form-group">
+          <%= text_field_tag(:search, nil, placeholder: "Owner Last Name", class: "form-control input-sm") %>
+        </div>
+      <%= submit_tag("Search for an Owner", class: "btn btn-default btn-xs") %>
+      <% end %> <!--ends search bar-->
+  </div>
+  </div> <!-- col-md-6 -->
+
 </div> <!-- closes row -->
+
+
 
 <table class="table">
   <thead>
