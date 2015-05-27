@@ -4,8 +4,18 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
-  end
+    #TO DO: fix errors. can't search by last name. search for non existing dog, close error. search for 1/2 existing
+   if params[:search]
+     @dogs = Dog.where("name LIKE '%#{params[:search]}%'")
+     if @dogs.size.zero?
+       flash[:notice] = 'Sorry, there are no matching dogs for your search.'
+       @dogs = Dog.all
+     end
+   else
+     @dogs = Dog.all
+   end
+ end
+
 
   # GET /dogs/1
   # GET /dogs/1.json

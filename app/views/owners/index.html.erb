@@ -21,7 +21,7 @@
 
   <tbody>
     <% @owners.order("last_name").each do |owner| %>
-        <td><%= link_to (image_tag owner.avatar.url(:thumb), class: "img-responsive"), owner %> <br/>
+        <td>
         <%= link_to owner.last_first, owner %></td>
         <td>
           <ul>
