@@ -21,6 +21,7 @@
   </div>
 
   <div class="field"> <!--ADD PHOTO -->
+  <%= image_tag @owner.avatar.url(:tiny), class: "img-responsive" %>
    <%= f.label :avatar %><br>
    <%= f.file_field :avatar %>
  </div>
