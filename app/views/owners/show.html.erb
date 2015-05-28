@@ -1,14 +1,59 @@
 <h1>Owner Profile</h1>
 <p>&nbsp;</p>
-<h2>
-  <%= @owner.first_last %>'s dogs
-</h2>
-<p>&nbsp;</p>
 
+<!-- owner pic -->
 <div class="row">
-<p>
+  <div class="col-md-4">
+  <p>
    <%= image_tag @owner.avatar.url(:medium), class: "img-responsive" %>
   </p>
+  </div> <!--col-md-4-->
+
+  <!--owner contact info-->
+  <div class="col-md-8">
+    <h2>
+      <%= @owner.first_last %>
+    </h2>
+
+    <%= link_to ' Edit', edit_owner_path(@owner), class: "btn btn-default btn-xs fa fa-pencil" %> 
+    <%= link_to ' All Owners', owners_path, class: "btn btn-default btn-xs fa fa-user" %>
+    <%= link_to ' New Owner', new_owner_path, class: "btn btn-default btn-xs fa fa-plus" %>
+    <%= link_to ' Add Dog', new_dog_path, class: "btn btn-default btn-xs fa fa-plus" %>
+    <%= link_to ' Delete Owner', @owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %>
+    <p>&nbsp;</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @owner.phone %>
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      <%= @owner.address_block %>
+    </p>
+
+    <p>
+      <strong>Signed waiver:</strong>
+      <%= @owner.signed_waiver %>
+    </p>
+
+    <p>
+      <strong>Emerg contact:</strong>
+      <%= @owner.emerg_contact %>
+    </p>
+
+    <p>
+      <strong>Emerg phone:</strong>
+      <%= @owner.emerg_phone %>
+    </p>
+
+  </div> <!--col-md-8-->
+</div> <!--closes row-->
+
+
+<div class="row">
+  <h3>
+     <%= @owner.first_name %>'s Dogs
+  </h3>
 
 <% @owner.dogs.order("name").each do |dog| %>
 <div class="col-md-3">
@@ -28,43 +73,8 @@
     <%= link_to ' ', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
     </div><!-- closes panel-footer -->
   </div><!-- closes panel -->
-
-</div><!-- closes col-md-3 -->
-
+</div><!-- closes col-md-8 -->
 <% end %> <!-- ends loop -->
-</div> <!-- ends row -->
 
 
-<h2>Contact <%= @owner.first_name %></h2>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @owner.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @owner.address_block %>
-</p>
-
-<p>
-  <strong>Signed waiver:</strong>
-  <%= @owner.signed_waiver %>
-</p>
-
-<p>
-  <strong>Emerg contact:</strong>
-  <%= @owner.emerg_contact %>
-</p>
-
-<p>
-  <strong>Emerg phone:</strong>
-  <%= @owner.emerg_phone %>
-</p>
-
-
-<%= link_to ' Edit', edit_owner_path(@owner), class: "btn btn-default btn-xs fa fa-pencil" %> 
-<%= link_to ' All Owners', owners_path, class: "btn btn-default btn-xs fa fa-user" %>
-<%= link_to ' New Owner', new_owner_path, class: "btn btn-default btn-xs fa fa-plus" %>
-<%= link_to ' Add Dog', new_dog_path, class: "btn btn-default btn-xs fa fa-plus" %>
-<%= link_to ' Delete Owner', @owner, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %>
+</div><!--closes row-->
