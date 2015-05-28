@@ -11,6 +11,7 @@ class Dog < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { 
     :medium => "300x300#", 
+    :tiny => "75x75#",
     :thumb => "100x100#" }, 
     :default_url => "missing_:style.jpg" #points to app/assets/images/missing_medium.jpg
 
