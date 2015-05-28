@@ -17,6 +17,17 @@ class Owner < ActiveRecord::Base
   validates :first_name, :last_name, :street_address, :city, :zip, presence: true, length: {minimum: 1}
   validates :phone, presence: true
 
+  has_attached_file :avatar, :styles => { 
+    :medium => "300x300#", 
+    :thumb => "100x100#", 
+    :tiny => "75x75#"}, 
+    :default_url => "missingowner_:style.png" #points to app/assets/images/missing_medium.jpg
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  validates_attachment_size :avatar, :less_than => 3.megabytes,
+    :unless => Proc.new {|m| m[:avatar_file_name].blank?}
+
 end
 
 # == Schema Information

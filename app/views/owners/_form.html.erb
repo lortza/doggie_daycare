@@ -20,6 +20,11 @@
     <%= f.text_field :last_name, class: "form-control", placeholder: "Smith" %>
   </div>
 
+  <div class="field"> <!--ADD PHOTO -->
+   <%= f.label :avatar %><br>
+   <%= f.file_field :avatar %>
+ </div>
+
   <div class="field">
     <%= f.label :phone %><br>
     <%= f.text_field :phone, class: "form-control", placeholder: "555-867-5309" %>
