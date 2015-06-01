@@ -2,9 +2,31 @@
 
 <h1>Listing Products</h1>
 
+<div class="row">
+  <div class="col-md-6 float-left"> 
+    <%= link_to ' Create New Product', new_product_path, class: "float-left btn btn-default btn-xs fa fa-plus" %>
+  </div> <!-- col-md-6 --> 
+
+  <!-- Search bar-->
+  <div class="col-md-6">
+  <div class="float-right">       
+      <%= form_tag("/products", method: "get", role: "search", class: "navbar-form navbar-left") do %>
+        <div class ="form-group">
+          <%= text_field_tag(:search, nil, placeholder: " ex: Dog Food", class: "form-control input-sm") %>
+        </div>
+      <%= submit_tag("Search for a Product", class: "btn btn-default btn-xs") %>
+      <% end %> <!--ends search bar-->
+      <%= link_to 'Show All', products_path, class: "btn btn-default btn-xs" %>
+  </div> <!--float-right-->
+  </div> <!-- col-md-6 -->
+
+</div> <!-- closes row -->
+
+
 <table class="table">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Price</th>
       <th>Quantity</th>
@@ -19,21 +41,19 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%= product.quantity %></td>
+      <td>
+        <%= link_to (image_tag product.image.url(:tiny), class: "img-responsive"), product %></td>
+        <td><%= link_to product.name, product %></td>
+        <td><%= number_to_currency product.price %></td>
+        <td align="center"><%= product.quantity %></td>
         <td><%= product.description %></td>
         <td><%= product.brand %></td>
         <td><%= product.rating %></td>
         <td><%= product.category.name %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to ' View', product, class: "btn btn-default btn-xs fa fa-binoculars" %></td>
+        <td><%= link_to ' Edit', edit_product_path(product), class: "btn btn-default btn-xs fa fa-pencil" %></td>
+        <td><%= link_to ' Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
