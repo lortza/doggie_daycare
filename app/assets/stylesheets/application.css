@@ -89,7 +89,7 @@ footer {
 }
 
 
-h1 {
+.header-bk {
   background-image: url("dog-tron3.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
