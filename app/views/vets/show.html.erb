@@ -12,8 +12,10 @@
   <%= @vet.phone %>
 </p>
 
-<%= link_to 'Edit Vet', edit_vet_path(@vet), class: "btn btn-default btn-xs" %> 
-<%= link_to 'Back to All Vets', vets_path, class: "btn btn-default btn-xs" %>
+<%= link_to ' Edit Vet', edit_vet_path(@vet), class: "btn btn-default btn-xs fa fa-pencil" %> 
+<%= link_to ' Back to All Vets', vets_path, class: "btn btn-default btn-xs fa fa-th" %>
 
-<%= link_to 'Create New Vet', new_vet_path, class: "btn btn-success btn-xs" %>
+<%= link_to ' Create New Vet', new_vet_path, class: "btn btn-default btn-xs fa fa-plus" %>
+
+<%= link_to ' Delete', @vet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %>
 

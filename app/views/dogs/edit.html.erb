@@ -1,6 +1,6 @@
-<h1>Editing Dog</h1>
+<h1>Editing <%= @dog.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel Edit', @dog, class: "btn btn-default btn-xs" %> |
-<%= link_to 'Back to All Dogs', dogs_path, class: "btn btn-default btn-xs" %>
+<%= link_to 'Cancel Edit', @dog, class: "btn btn-default btn-xs" %> 
+<%= link_to ' Back to All Dogs', dogs_path, class: "btn btn-default btn-xs fa fa-th" %>
