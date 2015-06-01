@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'storefront/all_items'
 
   resources :products
   resources :products
   resources :categories
+=======
+  devise_for :users
+>>>>>>> master
   get 'page/index'
 
   get 'page/about'
