@@ -45,14 +45,17 @@
         <li><%= link_to "Owners", owners_url %></li>
         <li><%= link_to "Dogs", dogs_url %></li>
         <li><%= link_to "About", page_about_path %></li>
+        <li>
+          <!--User Login box-->
+          <% if user_signed_in? %>
+          <%= current_user.email %>
+          <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign In", user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+        </li>
       </ul>
-      <!-- Search bar-->      
-      <%= form_tag("/dogs", method: "get", role: "search", class: "navbar-form navbar-left") do %>
-        <div class ="form-group">
-          <%= text_field_tag(:search, nil, placeholder: "Dog Name", class: "form-control input-sm") %>
-        </div>
-      <%= submit_tag("Search for a Dog", class: "btn btn-default btn-xs") %>
-      <% end %> <!--ends search bar-->
 
     </div><!-- /.navbar-collapse -->
   </nav>
