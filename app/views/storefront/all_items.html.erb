@@ -1,7 +1,12 @@
 <h1>Camp Canine Store & Gift Shop</h1>
-<p>For your regualr staples or a little something special for your furry friend. </p>
+<p>For your regular staples or a little something special for your furry friend. </p>
 
-<h2>All Items</h2>
+<!-- heading changes with category name -->
+  <% if params[:cat_id] %>
+    <h2>All <%= @category.name.capitalize %></h2>
+  <% else %>
+    <h2>All Items</h2>
+  <% end %>
 
 <div class="row">
   <% @products.each do |xproduct| %>
