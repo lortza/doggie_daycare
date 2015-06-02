@@ -90,6 +90,7 @@ footer {
 
 
 .header-bk {
+  background-image: url("h1_bk_dogs.jpg");
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 200px;
@@ -114,3 +115,11 @@ footer {
   background-color: #f8f5f3;
 }
 
+
+/* media query within a stylesheet */
+
+@media (max-width: 450px) {
+  .header-bk {
+    background-image: none;
+  }
+}
