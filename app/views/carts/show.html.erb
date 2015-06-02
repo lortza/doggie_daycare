@@ -1,0 +1,33 @@
+<h1>Your Cart</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th style="text-align: center;">Quantity</th>
+      <th>Unit Price</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.line_items.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td style="text-align: center;"><%= item.quantity %></td>
+        <td><%= number_to_currency item.product.price %></td>
+        <td><%= number_to_currency item.total_price %></td>
+      </tr>
+    <% end %> 
+  </tbody>
+  <tfoot>
+    <th>&nbsp;</th>
+    <th style="text-align: center;"><%= @cart.qty_total %> Items</th>
+    <th>&nbsp;</th>
+    <th>Subtotal: <%= number_to_currency @cart.subtotal %></th> 
+  </tfoot>
+</table>
+
+<h3>Order Subtotal: <%= number_to_currency @cart.subtotal %> </h3>
+
+<%= link_to " Continue Shopping", storefront_all_items_path, class: "btn btn-default btn-sm fa fa-cart" %>
+<%= button_to " Empty Cart", @cart, method: :delete, data: {confirm: "Are you sure you want to remove all items from your cart?"}, class: "btn btn-danger btn-sm fa fa-trash", form: {style: "display: inline-block;"} %>
