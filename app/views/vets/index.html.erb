@@ -2,11 +2,11 @@
 
 <div class="row">
   <div class="col-md-6"> 
-    <%= link_to ' Create New Vet', new_vet_path, class: "float-left btn btn-default btn-xs fa fa-plus" %>
+    <%= link_to ' Create New Vet', new_vet_path, class: "pull-left btn btn-default btn-xs fa fa-plus" %>
   </div> <!-- col-md-6 -->
   <!-- Search bar-->
   <div class="col-md-6">
-    <div class="float-right">       
+    <div class="pullpull-right">       
         <%= form_tag("/vets", method: "get", role: "search", class: "navbar-form navbar-left") do %>
           <div class ="form-group">
             <%= text_field_tag(:search, nil, placeholder: "Vet Name", class: "form-control input-sm") %>
@@ -14,7 +14,7 @@
         <%= submit_tag("Search for a Vet", class: "btn btn-default btn-xs") %>
         <% end %> <!--ends search bar-->
         <%= link_to 'Show All', vets_path, class: "btn btn-default btn-xs" %>
-    </div> <!-- float right-->
+    </div> <!-- pull right-->
   </div> <!-- col-md-6 -->
 
 </div> <!-- closes row -->

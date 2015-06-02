@@ -7,7 +7,7 @@
 
   <!-- Search bar-->
   <div class="col-md-6">
-  <div class="float-right">       
+  <div class="pull-right">       
       <%= form_tag("/dogs", method: "get", role: "search", class: "navbar-form navbar-left") do %>
         <div class ="form-group">
           <%= text_field_tag(:search, nil, placeholder: "Dog's Name", class: "form-control input-sm") %>
@@ -15,7 +15,7 @@
       <%= submit_tag("Search for a Dog", class: "btn btn-default btn-xs") %>
       <% end %> <!--ends search bar-->
       <%= link_to 'Show All', dogs_path, class: "btn btn-default btn-xs" %>
-  </div> <!--float-right-->
+  </div> <!--pull-right-->
   </div> <!-- col-md-6 -->
   
 </div> <!-- closes row -->
