@@ -11,23 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.text_area :address, class: "form-control", placeholder: "123 Main Street\nGerkin, OH 17652" %>
   </div>
-  <div class="field">
-    <%= f.label :pay_type %><br>
-    <%= f.text_field :pay_type %>
+  <div class="field form-group">
+    <%= f.label "Payment Type" %><br>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, {prompt: "Select a Payment Method"}, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Place Order", class: "btn btn-success btn-sm" %>
   </div>
 <% end %>

@@ -1,24 +1,48 @@
-<p id="notice"><%= notice %></p>
+<h1>Order #<%= @order.id %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>Pay type:</strong>
+<p class="pull-right">
+  <strong>Payment Type:</strong>
   <%= @order.pay_type %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
+<p><%= @order.name %><br/>
+  <%= @order.address %>
 </p>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product Image</th>
+      <th>Product</th>
+      <th style="text-align: center;">Quantity</th>
+      <th style="text-align: right;">Unit Price</th>
+      <th style="text-align: right;">Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.line_items.each do |item| %>
+      <tr>
+      <td><%= link_to (image_tag item.product.image.url(:tiny)), item.product %></td>
+        <td><%= link_to item.product.name, item.product %></td>
+        <td style="text-align: center;"><%= item.quantity %></td>
+        <td style="text-align: right;"><%= number_to_currency item.product.price %></td>
+        <td style="text-align: right;"><%= number_to_currency item.total_price %></td>  
+      </tr>
+    <% end %> 
+  </tbody>
+  <tfoot>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th style="text-align: center;"><%= @order.qty_total %> Items</th>
+    <th>&nbsp;</th>
+    <th style="text-align: right;">Subtotal: <%= number_to_currency @order.subtotal %></th> 
+  </tfoot>
+</table>
+
+<h3>Order Subtotal: <%= number_to_currency @order.subtotal %> </h3>
+
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

@@ -35,5 +35,8 @@
 
 <h3>Order Subtotal: <%= number_to_currency @cart.subtotal %> </h3>
 
+<%= link_to " Checkout", new_order_path, class: "btn btn-success btn-sm fa fa-cart" %>
+
 <%= link_to " Continue Shopping", storefront_all_items_path, class: "btn btn-default btn-sm fa fa-cart" %>
+
 <%= button_to " Empty Cart", @cart, method: :delete, data: {confirm: "Are you sure you want to remove all items from your cart?"}, class: "btn btn-danger btn-sm fa fa-trash", form: {style: "display: inline-block;"} %>
