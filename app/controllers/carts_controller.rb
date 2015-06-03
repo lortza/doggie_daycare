@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts
   # GET /carts.json
@@ -72,5 +73,11 @@ class CartsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
       params[:cart]
+    end
+
+    # this redirects a person to the storefront if they try to use a url for a shopping cart that doesn't exist.
+    def invalid_cart
+      logger.error "Attempt to access invalid cart #{params[:id]}"
+      redirect_to storefront_all_items_path, notice: "Whoa nelly! You're trying to access a shopping cart that doesn't exist."
     end
 end
