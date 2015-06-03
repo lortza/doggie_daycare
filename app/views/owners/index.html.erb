@@ -1,13 +1,13 @@
-<h1>Dog Owners</h1>
+<h1 class="header-bk header-bk-owners">Dog Owners</h1>
 
 <div class="row">
-  <div class="col-md-6 float-left"> 
-    <%= link_to ' Create New Owner', new_owner_path, class: "float-left btn btn-default btn-xs fa fa-user-plus" %>
+  <div class="col-md-6 pull-left"> 
+    <%= link_to ' Create New Owner', new_owner_path, class: "pull-left btn btn-default btn-xs fa fa-user-plus" %>
   </div> <!-- col-md-6 --> 
 
   <!-- Search bar-->
   <div class="col-md-6">
-  <div class="float-right">       
+  <div class="pull-right">       
       <%= form_tag("/owners", method: "get", role: "search", class: "navbar-form navbar-left") do %>
         <div class ="form-group">
           <%= text_field_tag(:search, nil, placeholder: "Owner Last Name", class: "form-control input-sm") %>
@@ -15,7 +15,7 @@
       <%= submit_tag("Search for an Owner", class: "btn btn-default btn-xs") %>
       <% end %> <!--ends search bar-->
       <%= link_to 'Show All', owners_path, class: "btn btn-default btn-xs" %>
-  </div> <!--float-right-->
+  </div> <!--pull-right-->
   </div> <!-- col-md-6 -->
 
 </div> <!-- closes row -->

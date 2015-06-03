@@ -90,13 +90,36 @@ footer {
 
 
 .header-bk {
-  background-image: url("dog-tron3.jpg");
-  background-size: 100%;
+  background-image: url("h1_bk_dogs.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
-  height: 200px;
+  background-position: top right;
+  min-height: 200px;
   padding: 1em;
-  color: white;
-  text-shadow: 2px 2px 2px #000;
+  color: black;
+  /* text-shadow: 2px 2px 2px #000; */
 }
 
+.header-bk-dogs {
+  background-image: url("h1_bk_dogs.jpg");
+  background-color: #e5e5e1;
+}
+
+.header-bk-owners {
+  background-image: url("h1_bk_owners.jpg");
+  background-color: #dedacf;
+}
+
+
+.header-bk-vets {
+  background-image: url("h1_bk_vets.jpg");
+  background-color: #f8f5f3;
+}
+
+
+/* media query within a stylesheet */
+
+@media (max-width: 450px) {
+  .header-bk {
+    background-image: none;
+  }
+}

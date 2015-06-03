@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :line_items
+  resources :carts
   devise_for :users
+  resources :products
+  resources :products
+  resources :categories
+
+  get 'storefront/all_items'
+
   get 'page/index'
 
   get 'page/about'
@@ -59,6 +68,5 @@ Rails.application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  #     #   end
 end
