@@ -1,13 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>Line Items Index</h1>
+<p>(shows remaining items in this session's cart -- but we want to redirect back to the actual shopping cart)</p>
 
-<h1>Listing Line Items</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Product</th>
-      <th>Cart</th>
-      <th>Quantity</th>
+      <th style="text-align: center;">Cart</th>
+      <th style="text-align: center;">Quantity</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +14,9 @@
   <tbody>
     <% @line_items.each do |line_item| %>
       <tr>
-        <td><%= line_item.product %></td>
-        <td><%= line_item.cart %></td>
-        <td><%= line_item.quantity %></td>
+        <td><%= line_item.product.name %></td>
+        <td style="text-align: center;"><%= line_item.cart.id %></td>
+        <td style="text-align: center;"><%= line_item.quantity %></td>
         <td><%= link_to 'Show', line_item %></td>
         <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
         <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
