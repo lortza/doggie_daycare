@@ -12,7 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :product_id %><br>
+  <%= image_tag @line_item.product.image.url(:medium), class: "img-responsive" %>
+    <%= f.label :product_id %><br/>
     <%= f.text_field :product_id %>
   </div>
   <div class="field">
