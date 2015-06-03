@@ -3,7 +3,7 @@
 <table class="table">
   <thead>
     <tr>
-    <th>Image</th>
+      <th>Product Image</th>
       <th>Product</th>
       <th style="text-align: center;">Quantity</th>
       <th>Unit Price</th>
@@ -13,7 +13,7 @@
   <tbody>
     <% @cart.line_items.each do |item| %>
       <tr>
-      <td><%= link_to (image_tag item.product.image.url(:tiny), class: "img-responsive"), item.product %></td>
+      <td><%= link_to (image_tag item.product.image.url(:tiny)), item.product %></td>
         <td><%= link_to item.product.name, item.product %></td>
         <td style="text-align: center;"><%= item.quantity %></td>
         <td><%= number_to_currency item.product.price %></td>
@@ -22,6 +22,7 @@
     <% end %> 
   </tbody>
   <tfoot>
+    <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th style="text-align: center;"><%= @cart.qty_total %> Items</th>
     <th>&nbsp;</th>
