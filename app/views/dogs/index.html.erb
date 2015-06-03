@@ -20,16 +20,14 @@
   
 </div> <!-- closes row -->
 
+<!-- dog panels that link to modals -->
 <div class="row">
-
 <% @dogs.order("name").each do |dog| %>
-
 <div class="col-md-3">
-
  <div class="panel panel-default <%= 'panel-success' if dog.in_daycare %>">
     <div class="panel-heading">
       <h3 class="panel-title"><a href="#" data-toggle="modal" data-target="#myModal_<%= dog.id%>"><%= dog.name_ownerlast %></a></h3>
-    </div>
+    </div><!--panel-heading-->
 
     <div class="panel-body">
     <p><a href="#" data-toggle="modal" data-target="#myModal_<%= dog.id%>">
