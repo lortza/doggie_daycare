@@ -24,6 +24,8 @@
 
           <td><%= link_to ' Delete', item, method: :delete, data: { confirm: 'Are you sure you want to delete this item from your cart? There is no undo.' }, class: "btn btn-default btn-xs fa fa-trash" %></td>
 
+
+
       </tr>
     <% end %> 
   </tbody>
@@ -42,6 +44,8 @@
 <%= link_to " Checkout", new_order_path, class: "btn btn-success btn-sm fa fa-cart" %>
 
 <%= link_to " Continue Shopping", storefront_all_items_path, class: "btn btn-default btn-sm fa fa-cart" %>
+
+<%= link_to content_tag(:i, " Edit", class: "fa fa-pencil"), storefront_all_items_path, class: "btn btn-warning btn-xs" %>
 
 <%= button_to " Empty Cart", @cart, method: :delete, data: {confirm: "Are you sure you want to remove all items from your cart?"}, class: "btn btn-danger btn-sm fa fa-trash", form: {style: "display: inline-block;"} %>
 
