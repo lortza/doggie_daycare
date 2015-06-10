@@ -14,7 +14,7 @@ class Owner < ActiveRecord::Base
     "#{street_address}, #{city}, ST #{zip}"
   end
 
-  validates :first_name, :last_name, :street_address, :city, :zip, presence: true, length: {minimum: 1}
+  validates :first_name, :last_name, :street_address, :zip, presence: true, length: {minimum: 1}
   validates :phone, presence: true
 
   has_attached_file :avatar, :styles => { 

@@ -32,9 +32,9 @@ Owner.create(first_name: "Kelly", last_name: "Kapowski", phone: "504-555-5014", 
 
 Owner.create(first_name: "Zack", last_name: "Morris", phone: "504-555-5014", emerg_contact: "Jacki", emerg_phone: "985-555-0235", street_address: "321 Broad Street", zip: "70115")
 
-Dog.create(name: "Falcor", breed_id: 1, owner_id: 1, vet_id: 1, in_daycare: true)
-Dog.create(name: "Ralphie", breed_id: 5, owner_id: 2, vet_id: 3, in_daycare: true)
+Dog.create(name: "Falcor", breed_id: 1, owner_id: 1, vet_id: 1, birth_date: Date.new(2015, 7, 8), in_daycare: true)
 
+Dog.create(name: "Ralphie", breed_id: 5, owner_id: 2, vet_id: 3, birth_date: Date.new(2015, 3, 10), in_daycare: true)
 
-
+Product.create(name: "Pink Collar", price: "14.99", quantity: 10, description: "Made from 100% durable leather material. Hand stitched for added strength.Decorated with 2 Rows Rhinestone and heart studded charm, 5 adjustment holes for adjustment. Fashionable and personalized designed for your pet.", brand: "SuperFur", rating: 5, category_id: 3)
 

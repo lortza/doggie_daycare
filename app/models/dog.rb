@@ -7,7 +7,7 @@ class Dog < ActiveRecord::Base
     "#{name} #{owner.last_name}"
   end
 
-  validates :name, :breed_id, :birth_date, :owner_id, :vet_id, presence: true
+  validates :name, :breed_id, :owner_id, :vet_id, presence: true
 
   has_attached_file :avatar, :styles => { 
     :medium => "300x300#", 
