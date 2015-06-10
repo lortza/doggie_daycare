@@ -23,3 +23,21 @@ Breed.create(name: 'Boxer')
 Breed.create(name: 'Mutt')
 
 categories = Category.create([{name: 'toys'}, {name: 'treats'}, {name: 'food'}, {name: 'accessories'}])
+
+Breed.create(name: 'Border Collie')
+Breed.create(name: 'Jack Russell')
+Breed.create(name: 'Pit Bull')
+Breed.create(name: 'Shih-tzu')
+Breed.create(name: 'Standard Poodle')
+Breed.create(name: 'Miniature Poodle')
+Breed.create(name: 'Doberman')
+Breed.create(name: 'Bulldog')
+Breed.create(name: 'Alaskan Malamute')
+Breed.create(name: 'Eskimo')
+Breed.create(name: 'Chihuahua')
+Breed.create(name: 'Yorkie')
+Breed.create(name: 'Boxer')
+Breed.create(name: 'Mutt')
+
+
+

@@ -7,7 +7,9 @@ class Product < ActiveRecord::Base
     :medium => "300x300#",
     :tiny => "75x75#",
     :thumb => "100x100#" },
-    :default_url => "missingproduct_:style.png"
+    :default_url => "missingproduct_:style.png",
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   private

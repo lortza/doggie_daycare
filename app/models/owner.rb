@@ -21,7 +21,9 @@ class Owner < ActiveRecord::Base
     :medium => "300x300#", 
     :thumb => "100x100#", 
     :tiny => "75x75#"}, 
-    :default_url => "missingowner_:style.png" #points to app/assets/images/missing_medium.jpg
+    :default_url => "missingowner_:style.png", #points to app/assets/images/missing_medium.jpg
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
