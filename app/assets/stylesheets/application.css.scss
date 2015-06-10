@@ -86,7 +86,7 @@ footer {
 
 
 .header-bk {
-  background-image: url("h1_bk_dogs.jpg");
+  background-image: image-url("h1_bk_dogs.jpg");
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 200px;
@@ -96,18 +96,18 @@ footer {
 }
 
 .header-bk-dogs {
-  background-image: url("h1_bk_dogs.jpg");
+  background-image: image-url("h1_bk_dogs.jpg");
   background-color: #e5e5e1;
 }
 
 .header-bk-owners {
-  background-image: url("h1_bk_owners.jpg");
+  background-image: image-url("h1_bk_owners.jpg");
   background-color: #dedacf;
 }
 
 
 .header-bk-vets {
-  background-image: url("h1_bk_vets.jpg");
+  background-image: image-url("h1_bk_vets.jpg");
   background-color: #f8f5f3;
 }
 
