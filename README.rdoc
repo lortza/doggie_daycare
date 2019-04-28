@@ -3,5 +3,6 @@
 This README would normally document whatever steps are necessary to get the
 application up and running. However, I don't quite have all of that put together yet. So in the meantime, you can see the heroku deployment here:
 
-https://campcanine.herokuapp.com/
+Hosted on heroku at: https://campcanine.herokuapp.com/
 
+App is currently turned off
