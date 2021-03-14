@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.2.0'
+gem 'bootsnap', '>= 1.1.0', require: false # Reduces boot times through caching; required in config/boot.rb
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,11 +56,15 @@ gem "figaro"
 
 gem "paperclip-dropbox", ">= 1.1.7"
 
-group :production do
-  gem "pg" #postgres for heroku
-  gem "rails_12factor" #heroku wants this  
-end
+gem "pg" #postgres for heroku
+gem 'puma', '~> 4.3' # Use Puma as the app server
 
+gem "rails_12factor" #heroku wants this
+
+group :development do
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'listen', '>= 3.0.5', '< 3.3'
+end
 
 group :development, :test do
   gem "faker" # faker data
@@ -74,4 +80,3 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
-
