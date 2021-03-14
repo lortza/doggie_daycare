@@ -49,7 +49,7 @@ gem "annotate"
 
 gem "stamp"
 
-gem "paperclip", "~> 4.2"
+gem "paperclip"
 
 # hides your secret info like APIs
 gem "figaro"
